@@ -1,0 +1,68 @@
+.blk {display: block;} .wh(@width;@height) {width: @width; height: @height;}
+.lft {float: left;} .rgt {float: right;} .absl {position: absolute;} .rltv {position: relative;}
+.circle {.radius(500px 500px 500px 500px); behavior:url(/js/pie.htc);} .mrgCenter {margin: 0 auto;}
+.maxWidth {max-width: 1020px} .crs {cursor: pointer;}
+*, *:before, *:after {.borderBox; }
+.clear {*zoom:1; &:before, &:after {display: table; clear: both; content: " "}}
+html, body, p {margin: 0; padding: 0}
+li {list-style: none;}
+.radius(@radius) {
+	-webkit-border-radius:@radius;
+	   -moz-border-radius: @radius;
+            border-radius: @radius;
+}
+
+.bxShadow(@shadow) {
+	-webkit-box-shadow: @shadow;
+        -moz-box-shadow: @shadow;
+            box-shadow: @shadow;
+}
+
+.borderBox {
+	-webkit-box-sizing:border-box;
+	   -moz-box-sizing:border-box;
+		    box-sizing:border-box;
+}
+
+.transition(@which) {
+	-ms-transition:@which ease 0.20s;
+	-o-transition:@which ease 0.20s;
+	-moz-transition:@which ease 0.20s;
+	-webkit-transition:@which ease 0.20s;
+	transition:@which ease 0.20s;
+}
+
+.userNoSelect {
+	-webkit-user-select: none; 
+	-ms-user-select: none; 
+	-moz-user-select: none; 
+	-o-user-select: none; 
+	user-select: none;
+}
+
+.gradient(@color1;@color2) {
+	background: @color1;
+	background: -moz-linear-gradient(top,  @color1 0%, @color2 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@color1), color-stop(100%,@color2));
+	background: -webkit-linear-gradient(top,  @color1 0%,@color2 100%);
+	background: -o-linear-gradient(top,  @color1 0%,@color2 100%);
+	background: -ms-linear-gradient(top,  @color1 0%,@color2 100%);
+	background: linear-gradient(to bottom,  @color1 0%,@color2 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@color1', endColorstr='@color2',GradientType=0 );
+}
+.gradientV(@color1;@color2) {
+	background: @color1;
+	background: -moz-linear-gradient(top,  @color1 0%, @color1 0%, @color2 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@color1), color-stop(0%,@color1), color-stop(100%,@color2));
+	background: -webkit-linear-gradient(top,  @color1 0%,@color1 0%,@color2 100%);
+	background: -o-linear-gradient(top,  @color1 0%,@color1 0%,@color2 100%);
+	background: -ms-linear-gradient(top,  @color1 0%,@color1 0%,@color2 100%);
+	background: linear-gradient(to bottom,  @color1 0%,@color1 0%,@color2 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@color1', endColorstr='@color2',GradientType=0 );
+}
+
+.pseudoElm {content:" "; .blk; .rltv;}
+
+@easeInOutCubic:cubic-bezier(0.645, 0.045, 0.355, 1);
+@easeOutBack:cubic-bezier(0.175, 0.885, 0.42, 1.65);
+@easeOutCubic:cubic-bezier(0.215, 0.61, 0.355, 1);
